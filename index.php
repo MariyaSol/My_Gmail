@@ -56,7 +56,7 @@ var_dump ($_GET);
 													}
 				}break;
 				default:{
-					echo signin();
+					echo signin();//при первой загрзке
 				}
 			}
 		}else {

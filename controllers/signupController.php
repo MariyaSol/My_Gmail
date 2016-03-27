@@ -1,6 +1,7 @@
 <?php
-require '../models/WorkWithUser.Class.php';
-require '../models/User.Class.php';
+require_once(__DIR__.'/../models/WorkWithUser_Class.php');
+require_once(__DIR__.'/../models/User_Class.php'); 
+//require 'models/User_Class.php';
   //обращение  к бд для проверки есть ли такой юзер
 
     $u = new User();
