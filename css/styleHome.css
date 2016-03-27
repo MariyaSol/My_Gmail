@@ -1,0 +1,128 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background: url(img/bg-288.png)repeat;
+  color: #999;
+  font: 100%/1.5em sans-serif;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+h1{
+background-color:rgb(10, 34, 43);
+	color: #fff;
+	font-size: 14px;
+	padding: 20px;
+	text-align: center;
+	text-transform: uppercase;
+}
+.all {
+  max-width: 900px;
+  margin:auto;
+  height: auto;
+  background: white;
+  overflow: hidden;
+  -webkit-box-shadow: -1px 2px 13px 2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 2px 13px 2px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 2px 13px 2px rgba(0, 0, 0, 0.75);
+
+}
+.sidebar {
+  width: 15%;
+  height: auto;
+  background-color: #282830;
+
+
+}
+.write {
+  width: 100%;
+  margin:0;
+  padding:0;
+  height:2000px;
+
+}
+.write .Napis {
+  background: #1dabb8;
+  font-size: 0.9em;
+  cursor: pointer;
+  margin:0;
+  color: #fff;
+  font-weight: bold;
+  outline: none;
+  padding: 16px 20px;
+  border:0;
+  width: 100%;
+}
+.write .Napis:hover {
+  background: #198d98;
+}
+
+img{
+  width:50px;
+  display: block;
+  margin-left:35%;
+  margin-top:38%;
+
+}
+.write img:nth-child(4){
+  width:55px;
+}
+.write img:nth-child(5){
+  width:50px;
+  padding-bottom:30%;
+}
+.write:before {
+	background-color:white;
+	content: "";
+	height: 10px;
+	left: 50%;
+	position: absolute;
+  margin-top:-4px;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+	width: 12px;
+}
+.Message{
+  width:40.3%;
+  height:auto;
+  background:rgba(187, 198, 193, 0.73);
+  position: fixed;
+  top:7.3%;
+  left:33.4%;
+}
+.H2s{
+  background-color:rgb(10, 34, 43);
+  	color: #fff;
+  	font-size: 10px;
+  	padding: 12px;
+  	text-align: center;
+  	text-transform: uppercase;
+
+}
+.H2s h2{
+
+  width:50%;
+  margin-left:17%;
+}
+.Message input{
+  width:96%;
+  padding:0.7%;
+  margin:1% 0 0 1%;
+}
+.TextEdit{
+  width:98%;
+  margin:1% 0 0 1%;
+}
+#File{
+  width:30%;
+  float: right;
+}
+.sidebar img{
+  cursor:pointer;
+}
