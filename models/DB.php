@@ -2,8 +2,10 @@
 
 class DB
 {
-   private $host = 'localhost=127.0.0.1:1919';
-   private $dbname = 'mysql:dbname=TestDataBase';
+   //private $host = 'localhost=127.0.0.1';
+  // private $host = 'http://127.0.0.1:1919/';
+  private $host = 'localhost';
+   private $dbname = 'My_Gmail';
    private $user = 'root';
    private $password = '';
 
@@ -11,8 +13,9 @@ class DB
                              PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC);
    public $db;
 
-   public function _construct ()
+   public function DB()
    {
+     //echo "DB_construct";
        try {
           $this->db = new PDO ('mysql:host='. $this->host .';dbname='. $this->dbname,
                   $this->user,
@@ -27,36 +30,42 @@ class DB
            echo 'ERROR: Not Connected to DB ' . $e->getMessage();
        }
    }
-
-
-
-   function db_query ($query) {
-
+  public function db_query ($query) {
+//echo " -db_query-  ";
           // mySQL
-          if($this->db_type == 1) {
-              $result = mysql_query($query, $this->dbh)
-                  or die ("Error: A problem was encountered while executing this query.");
+        //  if($this->db_type == 1) {
+            //  $result = mysql_query($query, $this->dbh)
+              //    or die ("Error: A problem was encountered while executing this query.");
 
+         $result = $this->db->query($query);
               return $result;
-          }
+          //}
           //end mySQL
       } //end db_query()
 
 
+  public   function db_numrows ($result) {
+//echo "db_numrows  ";
+         //switch($this->db_type) {
+          //   case 1: //mySQL
 
-
-
-
-
-
-     function db_numrows ($result) {
-
-         switch($this->db_type) {
-             case 1: //mySQL
-                 return mysql_num_rows($result);
-
-         } //end switch
+                // return mysql_num_rows($result);
+              return  $result->fetchColumn();
+        // } //end switch
      } // end db_numrows()
+
+
+
+
+
+
+
+
+
+
+
+
+
 
      function db_fetch_array (&$result) {
 

@@ -1,26 +1,53 @@
 <?php
 
-require 'DBClass.php';
+require 'DB.php';
 class WorkWithUser extends DB {
 
-    var $db;
     var $salt;
-
-
     public function WorkWithUser ()
     {
 
-      echo "constr  ";
-        $this->db = new DB();
+        //echo "  -constr-  ";
+        parent::DB();
+
         $this->salt = 'a552avf1ss';
     }
+
+    public  function RegisterNewUser($data)
+    {
+    $query = $this->db->prepare("INSERT users (Login_, firstName, lastName, surName, Password_, gender) VALUES (:login, :firstname, :lastName, :surName, :password, :gender)");
+    return $query->execute(array(
+                                    ':login'  => $data->login,
+                                    ':firstname'  => $data->firstname,
+                                    ':lastName' => $data->lastName,
+                                    ':surName' => $data->surname,
+                                    ':password' => md5($data->password),
+                                    ':gender' => $data->gender));
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         public function getByLogin($login)
         {
         $result = false;
         if($login) {
-            $query = $this->db->prepare("SELECT firstName, lastName, middleName, gender FROM Users WHERE login = :Login_");
+            $query = $this->db->prepare("SELECT firstName, lastName, middleName, gender FROM Users WHERE Login_ = :login");
             $query->execute(array('login' => $login));
             $result = $query->fetch();
         }
@@ -45,17 +72,7 @@ class WorkWithUser extends DB {
 
 
 
-        public function RegisterNewUser($data)
-        {
-        $query = $this->db->prepare("INSERT users (login, firstName, lastName, surName, password, gender) VALUES (:Login_, :FirstName, :LastName, :SurName, :Password, :Gender)");
-        return $query->execute(array(
-                                        'login'  => $data->login,
-                                        'firstname'  => $data->firstname,
-                                        'lastName' => $data->lastName,
-                                        'surName' => $data->surname,
-                                        'gender' => $data->gender,
-                                        'password' => md5($data->password)));
-    }
+
 
 
     public function login($login, $password) {
@@ -72,17 +89,7 @@ class WorkWithUser extends DB {
     }
 
 
-    function checkLoginExist($login_) {
 
-        echo "checkLoginExist";
-        $query = "SELECT * FROM Users where login='" . $Login_ ."'";
-        $result = $this->db->db_query($query);
-        if($this->db->db_numrows($result) > 0) {
-            return 0;
-        } else {
-            return 1;
-        }
-    }
 
      function checkLogin() {
         global $HTTP_COOKIE_VARS;

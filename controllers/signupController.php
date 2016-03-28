@@ -1,16 +1,36 @@
 <?php
 //require_once(__DIR__.'/../models/WorkWithUser_Class.php');
-//require_once(__DIR__.'/../models/User_Class.php');
+
 //require_once(__DIR__.'/../views/signin.php');
 //require_once(__DIR__.'/../index.php');
 //helloAction();
-
+require_once(__DIR__.'/../models/User.php');
 class SignupController
 {
 
   public function actionRegistration()
   {
     echo "SignupController actionRegistration";
+    $u = new User();
+    $u->firstname = '2';
+    $u->lastName ='2';
+    $u->surname ='2';
+    $u->login ='1@gmail.com';
+    $u->password ='2';
+    $u->gender ='male';
+
+
+    $result =$u->userToDB();
+    if (  $result)
+    {
+      //successfully
+      echo " <br> successfully <br>";
+    }else
+    {
+      //unsuccessfully
+      echo " <br> unsuccessfully <br>";
+    }
+
     return true;
   }
 
