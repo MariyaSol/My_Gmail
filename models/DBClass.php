@@ -2,7 +2,7 @@
 
 class DB
 {
-   private $host = 'localhost=127.0.0.1';
+   private $host = 'localhost=127.0.0.1:1919';
    private $dbname = 'mysql:dbname=TestDataBase';
    private $user = 'root';
    private $password = '';
@@ -64,6 +64,6 @@ class DB
              case 1: //mySQL
                  return mysql_fetch_array($result);
          } //end switch
-     } //end db_fetch_array() 
+     } //end db_fetch_array()
 
 }

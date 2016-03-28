@@ -1,9 +1,52 @@
 <?php
-	session_start();
+session_start();
+ini_set('display_errors',1);
+error_reporting(E_ALL);
 
-	include "views/signin.php";
-	include "views/Registration.php";
+
+//echo "string1 ";
+
+//require_once(__DIR__.'/views/signin.php');
+
+//echo "string2 ";
+//require_once(__DIR__.'/views/Registration.php');
+//echo "string3 ";
+require_once(__DIR__.'/components/Router.php');
+//require_once(__DIR__.'/config/routes.php');
+//echo "string11 ";
+$router = new Router();
+//echo "string12 ";
+$router->run();
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,54 +63,35 @@
 <body>
 
 <?php
-//	if(isset($_SESSION["auth"])){//если пользователь на сайте
-var_dump ($_GET);
-//	}else{
-		if(!empty($_GET["section"]) && !empty($_GET["action"])){
-			switch($_GET["section"]){
 
-				case "user":{
+//var_dump ($_GET);
+
+//	index();
+//	function	index(){
+  /*  echo "string";
+
 													switch($_GET["action"]){
 														case "signup":{ //зарегиться
 															echo register();
 														}break;
 														case "recovery":{
-															//echo passwordRecovery();
 
-															//$user = new User($f);
-															//$user->login =
-															//$user->save();
 														}break;
 														case "signin":{  //зайти в систему
 															echo signinController();
-															//echo signInForm();
 
-															//$user = new User($f);
-															//$user->login =
-															//$user->password =
-															//if($user->check())
 														}break;
 														case "home":{  //зайти в систему
 
 														}break;
 														default:{
-																echo signin();
-														}
-													}
-				}break;
-				default:{
-					echo signin();//при первой загрзке
-				}
-			}
-		}else {
-			echo signin();
-		}
-//	}
 
+																echo enter();
+														}
+													}*/
+
+											//	}
 
 ?>
-<!-- content -->
-
-
 </body>
 </html>

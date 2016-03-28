@@ -1,5 +1,9 @@
 <?php
-require 'controllers/signupController.php';
+//require 'controllers/signupController.php';
+echo "string4 ";
+
+require_once(__DIR__.'/../controllers/signupController.php');
+echo "string5 ";
 function register(){
 echo <<<END
 <div id="login-form">

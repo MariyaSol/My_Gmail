@@ -72,7 +72,7 @@ class WorkWithUser extends DB {
     }
 
 
-    function checkLoginExist($login) {
+    function checkLoginExist($login_) {
 
         echo "checkLoginExist";
         $query = "SELECT * FROM Users where login='" . $Login_ ."'";
