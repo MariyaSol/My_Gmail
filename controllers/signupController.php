@@ -4,32 +4,58 @@
 //require_once(__DIR__.'/../views/signin.php');
 //require_once(__DIR__.'/../index.php');
 //helloAction();
-require_once(__DIR__.'/../models/User.php');
+
 class SignupController
 {
-
-  public function actionRegistration()
+public function actionGetform()
+{
+  echo "SignupController actionRegistration ";
+  require_once(__DIR__.'/../views/registration.php');
+}
+  public function actionRegistration($params)//избыточный параметр
   {
-    echo "SignupController actionRegistration";
-    $u = new User();
-    $u->firstname = '2';
-    $u->lastName ='2';
-    $u->surname ='2';
-    $u->login ='1@gmail.com';
-    $u->password ='2';
-    $u->gender ='male';
+    echo "SignupController actionRegistration ";
+    require_once(__DIR__.'/../models/User.php');
+     $u = new User();
+      $u->firstname = '2';
+      $u->lastName ='2';
+      $u->surname ='2';
+      $u->login ='1@gmail.com';
+      $u->password ='2';
+      $u->gender ='male';
 
 
-    $result =$u->userToDB();
-    if (  $result)
-    {
-      //successfully
-      echo " <br> successfully <br>";
-    }else
-    {
-      //unsuccessfully
-      echo " <br> unsuccessfully <br>";
+      $result =$u->userToDB();
+      //if (  $result)
+      if (  $result)
+      {
+        //successfully
+        echo " <br> successfully <br>";
+        //отрисовать форму входа
+        //echo enter();
+         require_once(__DIR__.'/../views/signin.php');
+      }else
+      {
+        //unsuccessfully
+        echo " <br> unsuccessfully <br>";
+        //указать на ошибки пользователю
+      }
+    /*if($params){
+            if($params[0] == 'form')
+            {
+              //  require_once(__DIR__.'/../views/registration.php');
+                //echo  __DIR__.'/../views/registration.php' ;
+                echo  'require_once' ;
+            }
+            else if($params[0] == 'data') {
+              echo "eclse1";
+            }
     }
+    else {
+    //  echo "eclse2";
+  }*/
+  /*
+  */
 
     return true;
   }

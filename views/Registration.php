@@ -1,16 +1,32 @@
-<?php
-//require 'controllers/signupController.php';
-echo "string4 ";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  	<link rel="stylesheet" href="C:/OpenServer/domains/auth2/css/style.css" media="screen" title="no title" charset="utf-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<link rel="stylesheet" href="C:/OpenServer/domains/auth2/css/styleHome.css" media="screen" title="no title" charset="utf-8">
 
-require_once(__DIR__.'/../controllers/signupController.php');
-echo "string5 ";
+		<script src="C:/OpenServer/domains/auth2/js/ckeditor/ckeditor.js"></script>
+		<script src="C:/OpenServer/domains/auth2/js/ckeditor/samples/sample.js"></script>
+		<link rel="stylesheet" href="C:/OpenServer/domains/auth2/js/ckeditor/samples/sample.css">
+</head>
+<body>
+<?php register(); ?>
+</body>
+</html>
+<?php
 function register(){
 echo <<<END
+
+
+
+
 <div id="login-form">
     <h1>Регистрация</h1>
 
     <fieldset class="REGISTRATION">
-        <form action="controllers/signupController.php" method="post">
+        <form action="data" method="post">
             <input type="email" name="login"  placeholder="Login">
             <input type="password"  name="password" placeholder="Password">
             <input type="text" name="name"  placeholder="Name">
@@ -28,6 +44,11 @@ echo <<<END
     </fieldset>
 
 </div>
+
+
+
+
+
 
 END;
 }

@@ -25,6 +25,17 @@ class WorkWithUser extends DB {
                                     ':gender' => $data->gender));
     }
 
+    function isLoginExist($login) {
+        //echo "checkLoginExist";
+        $query = "SELECT * FROM Users where Login_='" . $login ."'";
+        $result = parent::db_query($query);
+        if(parent::db_numrows($result) > 0) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
 
 
 

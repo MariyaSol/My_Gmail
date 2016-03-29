@@ -37,16 +37,29 @@ return reguest path
           if(preg_match("~$uriPattern~",$uri))
           {
             //echo $path;
-            $segments = explode('/',$path);
 
+//echo "~$uriPattern~";
+//echo "-";
+//echo $path;
+//echo "-";
+//echo $uri;
+            $internalRoute = preg_replace("~$uriPattern~",$path,$uri);
+
+
+
+
+            $segments = explode('/',$internalRoute);
+array_shift($segments);//удалить index.php
             $controllerName = array_shift($segments).'Controller';
             $controllerName = ucfirst($controllerName );
 
             $actionName = 'action'.ucfirst(array_shift($segments));
 
-              //echo  "<td>$controllerName</td>";
-              //echo  "<td>$actionName</td>";
 
+
+              //echo  "<td>$controllerName</td>";
+            //  echo  "<td>$actionName</td>";
+            //  print_r($segments);
               //include file Controller
               $controllerFile = $_SERVER['DOCUMENT_ROOT'].'/controllers/'.$controllerName.'.php';
               if(file_exists($controllerFile))
@@ -56,7 +69,7 @@ return reguest path
 
               //create controller object
               $controllerObject = new $controllerName;
-              $result = $controllerObject->$actionName();
+              $result = $controllerObject->$actionName($segments);//передача параметров
           }
         }
 

@@ -2,8 +2,6 @@
 
 class DB
 {
-   //private $host = 'localhost=127.0.0.1';
-  // private $host = 'http://127.0.0.1:1919/';
   private $host = 'localhost';
    private $dbname = 'My_Gmail';
    private $user = 'root';
