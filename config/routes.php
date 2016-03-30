@@ -5,7 +5,8 @@ return array(
   'signup/form'=>'signup/getform',
   'signup/data'=>'signup/registration',
 
-  'signin'=>'signin/authentication',
+  'signin/form'=>'signin/getform',
+  'signin/data'=>'signin/authentication',
 
 );
 ?>

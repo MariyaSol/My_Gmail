@@ -12,7 +12,8 @@ class User
     var $userManager;
 public function User()
 {
-  $userManager=new WorkWithUser();
+  echo "User() ";
+  //$this->userManager=new WorkWithUser();
 }
 public static function getUserItemById()
 {
@@ -40,5 +41,18 @@ public  function userToDB()
       return true;
   }
   return false;
+}
+
+
+public  function login()
+{
+
+    //echo $this->login ;
+    //echo $this->password ;
+
+    $this->userManager=new WorkWithUser();
+  return    $this->userManager->loginUser($this);
+  
+
 }
 }

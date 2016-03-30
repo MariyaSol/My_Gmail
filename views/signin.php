@@ -24,12 +24,12 @@ echo <<<END
    <div id="login-form">
       <h1>Авторизация</h1>
       <fieldset>
-          <form action="signin" method="post">
-              <input type="email" placeholder="Login">
-              <input type="password" placeholder="Password">
+          <form action="../signin/data" method="post">
+              <input type="email" name="login" placeholder="Login">
+              <input type="password" name="pass" placeholder="Password">
               <input type="submit" value="ВОЙТИ" >
           </form>
-          <form action="signup/form" method="post">
+          <form action="../signup/form" method="post">
               <input type="submit" value="РЕГИСТРАЦИЯ" id="lol">
           </form>
               <footer class="clearfix">

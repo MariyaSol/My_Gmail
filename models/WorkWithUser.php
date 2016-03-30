@@ -35,6 +35,48 @@ class WorkWithUser extends DB {
             return 0;
         }
     }
+     function loginUser($user) {
+//echo "string3 ";
+      /*  $query = "SELECT Login_ FROM Users WHERE login = '" . $Login_ . "' AND password = '" . crypt($Password_, $this->salt) . "'";
+        $result = $this->db->db_query($query);
+        if($this->db->db_numrows($result) > 0) {
+            $secret = crypt($Login_,$this->salt);
+//            setcookie("mysite", "$login:$secret");
+            return 1;
+        } else {
+            return 0;
+        }*/
+
+          $query = "SELECT * FROM Users WHERE Login_ = '" . $user->login . "' AND password_ = '" . $user->password . "'";
+          try{
+
+
+                                    $result = parent::db_query($query);
+                                    $rows = $result->fetchAll();
+                                    //print_r($rows);
+                                    if(count($rows)> 0) {
+                                       $user->id =  $rows[0]["ID_User"];
+                                       $user->firstname =  $rows[0]["FirstName"];
+                                       $user->lastName = $rows[0]["LastName"];
+                                       $user->surname = $rows[0]["SurName"];
+                                       $user->login = $rows[0]["Login_"];
+                                       $user->password = $rows[0]["Password_"];
+                                       $user->gender = $rows[0]["Gender"];
+                                      //echo "true1 ";
+                                          return $user;
+                                      }
+                                      else {
+                                        // echo "string5 ";
+                                          return null;
+
+
+                                     }
+          }catch(PDOException  $e ){
+                  echo "Error: ".$e;
+            }
+
+
+    }
 
 
 
@@ -86,18 +128,7 @@ class WorkWithUser extends DB {
 
 
 
-    public function login($login, $password) {
 
-        $query = "SELECT Login_ FROM Users WHERE login = '" . $Login_ . "' AND password = '" . crypt($Password_, $this->salt) . "'";
-        $result = $this->db->db_query($query);
-        if($this->db->db_numrows($result) > 0) {
-            $secret = crypt($Login_,$this->salt);
-//            setcookie("mysite", "$login:$secret");
-            return 1;
-        } else {
-            return 0;
-        }
-    }
 
 
 
