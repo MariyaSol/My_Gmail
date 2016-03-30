@@ -1,14 +1,15 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  	<link rel="stylesheet" href="C:/OpenServer/domains/auth2/css/style.css" media="screen" title="no title" charset="utf-8">
+  	<link rel="stylesheet" href="../../css/style.css" media="screen"  title="no title" charset="utf-8">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-		<link rel="stylesheet" href="C:/OpenServer/domains/auth2/css/styleHome.css" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="../../css/styleHome.css" media="screen" title="no title" charset="utf-8">
 
-		<script src="C:/OpenServer/domains/auth2/js/ckeditor/ckeditor.js"></script>
-		<script src="C:/OpenServer/domains/auth2/js/ckeditor/samples/sample.js"></script>
-		<link rel="stylesheet" href="C:/OpenServer/domains/auth2/js/ckeditor/samples/sample.css">
+		<script src="../../js/ckeditor/ckeditor.js"></script>
+		<script src="../../js/ckeditor/samples/sample.js"></script>
+		<link rel="stylesheet" href="../../js/ckeditor/samples/sample.css">
 </head>
 <body>
 <?php home(); ?>
@@ -20,7 +21,7 @@ function home (){
 echo <<< END
 
 
-<body>
+
 <div class="all">
   <h1>Home page</h1>
       <div class="write">
