@@ -8,5 +8,7 @@ return array(
   'signin/form'=>'signin/getform',
   'signin/data'=>'signin/authentication',
 
+  'home/data'=>'home/index',
+
 );
 ?>

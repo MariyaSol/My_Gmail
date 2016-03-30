@@ -26,12 +26,17 @@ echo <<< END
   <h1>Home page</h1>
       <div class="write">
           <div class="sidebar">
+          <form action="../home/data" method="post">
+            <input type="submit" name="name" value="ВЫХОД" >
+            <input type="hidden" name="exit" value="true" >
+          </form>
         <input type="button" name="name" value="НАПИСАТЬ" class="Napis">
 
-        <img src="img/vxod.png" alt="">
-        <img src="img/isxod.png" alt="">
-        <img src="img/spam.png" alt="">
-        <img src="img/trash.png" alt="">
+
+        <img src="../../img/vxod.png" alt="">
+        <img src="../../img/isxod.png" alt="">
+        <img src="../../img/spam.png" alt="">
+        <img src="../../img/trash.png" alt="">
 
     </div>
       <div class="Message">
