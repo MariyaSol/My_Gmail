@@ -15,23 +15,32 @@ class WorkWithUser extends DB {
 
     public  function RegisterNewUser($data)
     {
+      echo "string RegisterNewUser";
     $query = $this->db->prepare("INSERT users (Login_, firstName, lastName, surName, Password_, gender) VALUES (:login, :firstname, :lastName, :surName, :password, :gender)");
     return $query->execute(array(
                                     ':login'  => $data->login,
                                     ':firstname'  => $data->firstname,
                                     ':lastName' => $data->lastName,
                                     ':surName' => $data->surname,
-                                    ':password' => md5($data->password),
+                                    //':password' => md5($data->password),//кодир
+                                    ':password' =>$data->password,
                                     ':gender' => $data->gender));
     }
 
     function isLoginExist($login) {
         //echo "checkLoginExist";
+        echo "string5-login ".$login;
         $query = "SELECT * FROM Users where Login_='" . $login ."'";
         $result = parent::db_query($query);
-        if(parent::db_numrows($result) > 0) {
+
+        $rows = $result->fetchAll();
+        print_r($rows);
+        //if(parent::db_numrows($result) > 0) {
+          if(count($rows)> 0){
+            echo "string5_1 ";
             return 1;
         } else {
+          echo "string5_0 ";
             return 0;
         }
     }

@@ -11,33 +11,44 @@ public function actionGetform()
 {
   echo "SignupController actionRegistration ";
   require_once(__DIR__.'/../views/registration.php');
+ $infAboutsSuccsess ='';
+ $registerView  =new Register($infAboutsSuccsess);
 }
   public function actionRegistration($params)//избыточный параметр
   {
     echo "SignupController actionRegistration ";
     require_once(__DIR__.'/../models/User.php');
      $u = new User();
-      $u->firstname = '2';
-      $u->lastName ='2';
-      $u->surname ='2';
-      $u->login ='1@gmail.com';
-      $u->password ='2';
+      $u->firstname = $_POST['name'];
+      $u->lastName =$_POST['lname'];
+      $u->surname =$_POST['surname'];
+      $u->login =$_POST['login'];
+      $u->password =$_POST['password'];
       $u->gender ='male';
 
 
       $result =$u->userToDB();
       //if (  $result)
+      echo "string1 ";
+      //print_r($result);
       if (  $result)
       {
+        echo "string2 ";
         //successfully
-        echo " <br> successfully <br>";
+        //echo " <br> successfully <br>";
         //отрисовать форму входа
         //echo enter();
          require_once(__DIR__.'/../views/signin.php');
+
+
+        //передаю юзер что бы автозаполнить поля для входа
+         $signInView  =new Signin();//$u
       }else
       {
         //unsuccessfully
-        echo " <br> unsuccessfully <br>";
+         require_once(__DIR__.'/../views/registration.php');
+        $infAboutsSuccsess ='пользователь с таким логином уже зарегистрирован';
+        $registerView  =new Register($infAboutsSuccsess);
         //указать на ошибки пользователю
       }
     /*if($params){

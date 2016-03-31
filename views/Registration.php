@@ -12,45 +12,56 @@
 		<link rel="stylesheet" href="../../js/ckeditor/samples/sample.css">
 </head>
 <body>
-<?php register(); ?>
-</body>
-</html>
+
+
 
 
 <?php
-function register(){
-echo <<<END
+class Register
+{
+
+      public function Register($model)
+      {
+        echo <<<END
 
 
 
 
-<div id="login-form">
-    <h1>Регистрация</h1>
+        <div id="login-form">
+            <h1>Регистрация</h1>
 
-    <fieldset class="REGISTRATION">
-        <form action="data" method="post">
-            <input type="email" name="login"  placeholder="Login">
-            <input type="password"  name="password" placeholder="Password">
-            <input type="text" name="name"  placeholder="Name">
-            <input type="text"  name="lname" placeholder="Last name">
-            <input type="text" name="surname"  placeholder="Surname">
-
-          //add gender in radio
-
-            <input type="submit" value="РЕГИСТРАЦИЯ" id="Subreg">
-            <footer class="clearfix">
+            <fieldset class="REGISTRATION">
+                <form action="data" method="post">
+                    <input type="email" name="login"  placeholder="Login">
+                    <input type="password"  name="password" placeholder="Password">
+                    <input type="text" name="name"  placeholder="Name">
+                    <input type="text"  name="lname" placeholder="Last name">
+                    <input type="text" name="surname"  placeholder="Surname">
 
 
-            </footer>
-        </form>
-    </fieldset>
+<p>$model</p>
+                    <input type="submit" value="РЕГИСТРАЦИЯ" id="Subreg">
+                    <footer class="clearfix">
 
-</div>
+
+                    </footer>
+                </form>
+            </fieldset>
+
+        </div>
 
 
 
 
 
 END;
+
+      }
 }
+
+
+
 ?>
+
+</body>
+</html>

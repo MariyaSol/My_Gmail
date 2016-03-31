@@ -12,7 +12,7 @@ class User
     var $userManager;
 public function User()
 {
-  echo "User() ";
+  //echo "User() ";
   //$this->userManager=new WorkWithUser();
 }
 public static function getUserItemById()
@@ -21,6 +21,7 @@ public static function getUserItemById()
 }
 private  function isUniqueLogin()
 {
+    echo "string4 ";
    $this->userManager=new WorkWithUser();
    if($this->userManager->isLoginExist($this->login))
    {
@@ -35,6 +36,7 @@ private  function isUniqueLogin()
 public  function userToDB()
 {
   if(  $this->isUniqueLogin()  ){
+    echo "string3";
       //data to db
 
       $this->userManager->RegisterNewUser($this);
@@ -52,7 +54,7 @@ public  function login()
 
     $this->userManager=new WorkWithUser();
   return    $this->userManager->loginUser($this);
-  
+
 
 }
 }
