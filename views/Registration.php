@@ -15,6 +15,8 @@
 <?php register(); ?>
 </body>
 </html>
+
+
 <?php
 function register(){
 echo <<<END
@@ -33,7 +35,7 @@ echo <<<END
             <input type="text"  name="lname" placeholder="Last name">
             <input type="text" name="surname"  placeholder="Surname">
 
-
+          //add gender in radio
 
             <input type="submit" value="РЕГИСТРАЦИЯ" id="Subreg">
             <footer class="clearfix">
@@ -44,7 +46,6 @@ echo <<<END
     </fieldset>
 
 </div>
-
 
 
 

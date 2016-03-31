@@ -6,13 +6,17 @@ class SigninController
   {
     echo "SigninController actionGetform";
       require_once(__DIR__.'/../views/signin.php');
+      $aboutSuccess = "";// непр ввод логина или пароля
+      $signInView  =new Signin($aboutSuccess);
     return true;
   }
   public function actionAuthentication()
   {
     echo "SigninController actionAuthentication";
   //получить данные из формы
+
     require_once(__DIR__.'/../models/User.php');
+
       $u = new User();
 
        $u->login =$_POST['login'];
@@ -37,7 +41,10 @@ class SigninController
 }
 else {
     //не позволить зайти  на Home
-  echo "incorrect pass or login";
+  //echo "incorrect pass or login";
+  require_once(__DIR__.'/../views/signin.php');
+  $aboutSuccess = " неправильный логин или пароль ";// непр ввод логина или пароля
+  $signInView  =new Signin($aboutSuccess);
 }
 
     return true;

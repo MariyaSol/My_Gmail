@@ -17,6 +17,8 @@ require_once(__DIR__.'/components/Router.php');
 $router = new Router();
 //echo "string12 ";
 $router->run();
+//header('Location: index.php/signin/form');
+//die();
 ?>
 
 
