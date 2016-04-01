@@ -37,7 +37,7 @@
                                                       </form>
                                                           <footer class="clearfix">
                                                               <p style="color:red"> $model</p>
-                                                              <p><span class="info">?</span><a href="ResetParol.html">Забыли пароль? </a></p>
+                                                              <p><span class="info">?</span><a href="../resetpassword/form">Забыли пароль? </a></p>
                                                           </footer>
                                                   </fieldset>
                                               </div>

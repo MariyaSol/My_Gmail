@@ -10,5 +10,8 @@ return array(
 
   'home/data'=>'home/index',
 
+
+  'resetpassword/data'=>'passwordreset/index',
+'resetpassword/form'=>'passwordreset/getform',
 );
 ?>
