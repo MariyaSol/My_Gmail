@@ -18,7 +18,7 @@ class PasswordresetController
 
 $to = "mariyamailbox@mail.ru";
 $subject = "восстановление пароля";
-$txt ="Ваш логин:" $_POST['login']."\r\n Ваш пароль:". $_POST['password'];
+$txt ="Ваш логин:" . $_POST['login']."\r\n Ваш пароль:". $_POST['password'];
 $headers = "From: mariyasolomakha@gmail.com" . "\r\n" .
 "CC: mariyamailbox@mail.ru";
 

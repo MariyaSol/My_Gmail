@@ -9,7 +9,7 @@ return array(
   'signin/data'=>'signin/authentication',
 
   'home/data'=>'home/index',
-
+  'home/message'=>'home/message',
 
   'resetpassword/data'=>'passwordreset/index',
 'resetpassword/form'=>'passwordreset/getform',

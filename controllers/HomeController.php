@@ -18,7 +18,11 @@ class HomeController
 
     return true;
   }
-
+  public function actionMessage()
+  {
+      echo "HomeController actionMessage";
+    return true;
+  }
 }
 
 

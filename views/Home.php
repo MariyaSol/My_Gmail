@@ -41,35 +41,36 @@ echo <<< END
     </div>
       <div class="Message">
           <div class="H2s"><h2>Написать сообщение</h2></div>
-          <form class="" action="index.html" method="post">
-              <input type="text" placeholder="Тема:">
-              <input type="text" placeholder="Кому:">
-              <div class="TextEdit">
-                <textarea name="name" rows="8" cols="40" placeholder="Напишите сообщение" id="mess"></textarea>
-                <script>
-CKEDITOR.replace( 'mess', {
-uiColor: '#dddddd',
-toolbar: [
-['Source','-','Save','NewPage','Preview','-','Templates'] ,
-['Cut','Copy','Paste','PasteText','PasteFromWord','-','Print'] ,
-['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
-['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField'],
-['BidiLtr', 'BidiRtl'],
-['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
-['NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'],
-['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
-['Link','Unlink','Anchor'],
-['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak'],
-['Styles','Format','Font','FontSize'],
-['TextColor','BGColor'],
-['Maximize', 'ShowBlocks','-','About']
+          <form class="" action="../home/message" method="post">
+                                  <input type="text" placeholder="Тема:">
+                                  <input type="text" placeholder="Кому:">
+                                  <div class="TextEdit">
+                                    <textarea name="name" rows="8" cols="40" placeholder="Напишите сообщение" id="mess"></textarea>
+                                    <script>
+                                      CKEDITOR.replace( 'mess', {
+                                      uiColor: '#dddddd',
+                                      toolbar: [
+                                      ['Source','-','Save','NewPage','Preview','-','Templates'] ,
+                                      ['Cut','Copy','Paste','PasteText','PasteFromWord','-','Print'] ,
+                                      ['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
+                                      ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField'],
+                                      ['BidiLtr', 'BidiRtl'],
+                                      ['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
+                                      ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'],
+                                      ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+                                      ['Link','Unlink','Anchor'],
+                                      ['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak'],
+                                      ['Styles','Format','Font','FontSize'],
+                                      ['TextColor','BGColor'],
+                                      ['Maximize', 'ShowBlocks','-','About']
 
 
-]
-} );
-</script>
-              </div>
-  <input type="file" id="File" name="foto">
+                                      ]
+                                      } );
+                                      </script>
+                                  </div>
+                      <input type="file" id="File" name="foto">
+                        <input type="submit" value="ОТПРАВИТЬ" >
           </form>
       </div>
     </div>
